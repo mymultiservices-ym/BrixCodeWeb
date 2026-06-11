@@ -1,0 +1,164 @@
+@import '../../../styles.scss';
+
+.nosotros-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  
+  .hero-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: $text-white;
+    
+    @include sm() {
+      padding: 2rem 1rem;
+    }
+    
+    h1 {
+      @include mainTitleText();
+      color: $text-white;
+      margin-bottom: 1rem;
+    }
+    
+    p {
+      @include generalText();
+      color: $text-white;
+      font-size: 1.2rem;
+    }
+  }
+  
+  .mission-vision {
+    max-width: $bp-max-width;
+    margin: 0 auto;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    
+    @include sm() {
+      grid-template-columns: 1fr;
+      padding: 1rem;
+    }
+    
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 2rem;
+      text-align: center;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+      
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: $strong-shadow;
+      }
+      
+      .card-icon {
+        font-size: 48px;
+        width: 48px;
+        height: 48px;
+        color: var(--secondary);
+        margin-bottom: 1rem;
+      }
+      
+      h3 {
+        @include subTitleText();
+        margin-bottom: 1rem;
+      }
+      
+      p {
+        @include generalText();
+        color: var(--text-secondary);
+      }
+    }
+  }
+  
+  .stats {
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    background: rgba(255,255,255,0.1);
+    border-radius: var(--radius);
+    
+    .stat {
+      text-align: center;
+      color: $text-white;
+      
+      .number {
+        display: block;
+        @include welcomeText();
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        
+        @include sm() {
+          font-size: 2rem;
+        }
+      }
+      
+      .label {
+        @include generalText();
+      }
+    }
+  }
+  
+  .team-section {
+    max-width: $bp-max-width;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    
+    h2 {
+      @include mainTitleText();
+      color: $text-white;
+      margin-bottom: 2rem;
+    }
+    
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      
+      @include sm() {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .team-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 2rem;
+      text-align: center;
+      transition: var(--transition);
+      
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: $strong-shadow;
+      }
+      
+      .team-icon {
+        font-size: 48px;
+        width: 48px;
+        height: 48px;
+        color: var(--secondary);
+        margin-bottom: 1rem;
+      }
+      
+      h4 {
+        @include subTitleText();
+        margin-bottom: 0.5rem;
+      }
+      
+      p {
+        @include labelText();
+        color: var(--secondary);
+        margin-bottom: 0.5rem;
+      }
+      
+      .exp {
+        @include generalDescText();
+      }
+    }
+  }
+}

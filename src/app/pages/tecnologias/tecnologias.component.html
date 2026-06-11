@@ -1,0 +1,28 @@
+<div class="tecnologias-page">
+  <div class="hero-section">
+    <h1>Tecnologías</h1>
+    <p>Utilizamos las mejores herramientas del mercado</p>
+  </div>
+
+  <div *ngFor="let category of categories" class="tech-category">
+    <h2>
+      <mat-icon>{{category.icon}}</mat-icon>
+      {{category.name}}
+    </h2>
+    <div class="tech-grid">
+      <div *ngFor="let tech of category.technologies" class="tech-item">
+        <mat-icon class="tech-icon">{{tech.icon}}</mat-icon>
+        <div class="tech-name">{{tech.name}}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-section">
+    <h3>¿Necesitas una solución con estas tecnologías?</h3>
+    <p>Contáctanos y te ayudamos a elegir la mejor opción para tu proyecto</p>
+    <button mat-raised-button color="accent" routerLink="/contacto">
+      <mat-icon>send</mat-icon>
+      Consultar ahora
+    </button>
+  </div>
+</div>

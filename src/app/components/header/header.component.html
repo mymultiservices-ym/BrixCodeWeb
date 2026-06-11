@@ -1,0 +1,23 @@
+<mat-toolbar color="primary" class="header">
+  <div class="logo-container">
+    <mat-icon class="logo-icon">rocket_launch</mat-icon>
+    <a routerLink="/" class="logo">BrixCode</a>
+  </div>
+
+  <!-- Menú para desktop -->
+  <div class="desktop-menu">
+    <a *ngFor="let item of menuItems"
+       [routerLink]="item.path"
+       routerLinkActive="active"
+       [routerLinkActiveOptions]="{ exact: item.path === '/' }"
+       mat-button>
+      <mat-icon>{{item.icon}}</mat-icon>
+      {{item.label}}
+    </a>
+  </div>
+
+  <!-- Botón para menú móvil (Bottom Sheet) -->
+  <button mat-icon-button class="mobile-menu-button" (click)="openMobileMenu()">
+    <mat-icon>menu</mat-icon>
+  </button>
+</mat-toolbar>

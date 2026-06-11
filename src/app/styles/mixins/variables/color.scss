@@ -1,0 +1,179 @@
+:root {
+  --primary: #1e293b; /* sidebar */
+  --secondary: #3b82f6; /* botones azules */
+  --success: #22c55e; /* verde */
+  --danger: #ef4444; /* rojo */
+  --warning: #f59e0b; /* naranja */
+  --bg: #f3f4f6; /* fondo general */
+  --card-bg: #ffffff; /* tarjetas blancas */
+  --text-main: #111827; /* texto principal */
+  --text-secondary: #6b7280; /* texto secundario */
+  --border: #e5e7eb; /* bordes */
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --transition: all 0.25s ease;
+  --sidebar-bg: #24262a;
+  --sidebar-text: #8c90a0;
+  --sidebar-selected-bg: rgba(76, 194, 93, 0.15);
+  --sidebar-selected-text: #4ec25d;
+  --sidebar-hover-bg: rgba(76, 194, 93, 0.1);
+}
+// ============================================
+// SCSS VARIABLES (para usar en mixins)
+// ============================================
+
+// Tipografías
+$font-family-primary: 'Poppins', sans-serif;
+$font-family-sec: 'Inter', sans-serif;
+
+// Colores principales (basados en las variables CSS o valores directos)
+$app-component-bg: #ffffff;
+$app-lines: #e2e8f0;
+$app-white: #ffffff;
+$propisory-white: $app-white;
+$background-color: #f7fdff;
+
+$primary-color-text: #000000;
+$secondary-color-text: #475569;
+$text-white: #ffffff;
+
+$primary-color: #0f172a;
+$secondary-color: #3b82f6;
+$green-light: #31e2ad;
+$green-gradient: #82e1ab;
+$secondary-color-opacity: 0.2;
+
+$success-color: #76c47a;
+$accent-color: #f0a941;
+$warn-color: #cc3300;
+
+$background-menu-active: #f9fafc;
+$background-btn-cancel: #eeebeb;
+$error-color: #f00;
+$succes-color: #5cb85c;
+$primary-color-hover: darken($secondary-color, 10%);
+$grey-text: #667085;
+$hover-button: #0000000f;
+
+$primary-color-login: #fff6;
+$secondary-color-login: #107076b3;
+
+$gradient-dashboard-text: linear-gradient(90deg, $green-light 0%, $primary-color 100%);
+
+// Header
+$header-enterprise-logo-display: none;
+$header-padding: 0 3rem;
+$header-margin-x: 0rem;
+$header-margin-y: 0rem;
+$header-bg-color: linear-gradient(89.38deg, $secondary-color 0%, $green-gradient 100%);
+$header-icons-color: $text-white;
+$header-text-color: $text-white;
+$header-box-shadow: 0;
+$header-border-radius: none;
+$header-vertical-divider-bg-color: $text-white;
+$header-vertical-divider-1-visibility: hidden;
+$header-vertical-divider-2-visibility: visible;
+
+// Sidenav
+$sidenav-bg-color: white;
+$sidenav-item-selected-text-color: $secondary-color;
+$sidenav-item-not-selected-text-color: $secondary-color-text;
+$sidenav-item-border-color: $secondary-color;
+$sidenav-menu-active-bg-color: #f6f3fb;
+$sidenav-menu-hover-bg-color: #f5f5f5;
+$sidenav-menu-active-border-bg-color: $secondary-color;
+$sidenav-icon-selected-filter: brightness(0) saturate(100%) invert(22%) sepia(50%) saturate(300%)
+  hue-rotate(250deg) brightness(90%) contrast(95%);
+$sidenav-height: 100vh;
+$sidenav-mobile-height: 100vh;
+$sidenav-margin-top: 0rem;
+$sidenav-border-radius: none;
+$sidenav-box-shadow: 0;
+
+// Formularios
+$label-input-text-color: $secondary-color-text;
+$input-text-hint: $secondary-color-text;
+$input-text-color-active: $secondary-color-text;
+$input-bg-color: $app-white;
+$input-border: 1px solid $app-lines;
+
+// Botones
+$app-btn-main-bg-color: $header-bg-color;
+$app-btn-border-radius: 0.5rem;
+$btn-action-style-two-bg-color: $primary-color;
+$btn-with-icon-bg-color: $header-bg-color;
+$btn-filters-selected-bg-color: $primary-color;
+$btn-filters-selected-text-color: $text-white;
+$btn-filters-not-selected-bg-color: #dcdbdd;
+$btn-filters-not-selected-text-color: $primary-color-text;
+
+// Modal
+$modal-bg-color: $app-component-bg;
+$modal-header-line-divider-color: $app-lines;
+$modal-btn-action-text-color: $text-white;
+$modal-btn-action-bg-color: $app-btn-main-bg-color;
+$modal-btn-cancel-bg-color: $background-btn-cancel;
+
+// Tablas
+$table-header-text-color: $secondary-color-text;
+$table-header-text-transform: uppercase;
+$table-header-bg-color: #f9fafc;
+$table-text-color: $secondary-color-text;
+$table-text: $secondary-color-text;
+$table-bg-color: $app-component-bg;
+$table-border-x: $app-lines;
+$not-found-text: #afafaf;
+
+// Paginador
+$paginator-btn-selected-bg-color: $primary-color;
+$paginator-btn-bg-color: $app-component-bg;
+$paginator-btn-next-bg-color: $app-component-bg;
+$paginator-btn-prev-bg-color: $app-component-bg;
+$paginator-btn-selected-text-color: $text-white;
+$paginator-btn-text-color: $primary-color-text;
+$paginator-border-color: $app-lines;
+
+$background-tables: $app-component-bg;
+$table-lines: $app-lines;
+$table-rows: 0.5px solid $secondary-color;
+$box-shadow-table: 0px 0px 20px 0px rgba(215, 222, 227, 0.5);
+
+// Tabs
+$tab-title-bg-color: $app-component-bg;
+$tab-btn-icon-color: $app-white;
+
+// Cards
+$card-icon-border-radius: 0;
+$card-icon-box-shadow: none;
+$card-border-radius: 0.5rem;
+$card-sub-card-bg-color: #f8f9fc;
+
+// Home
+$home-welcome-bg-color: $app-component-bg;
+
+// Progress bar
+$progress-bar-completed-bg-color: $secondary-color;
+$progress-bar-pending-bg-color: rgba($secondary-color, $secondary-color-opacity);
+
+// Login
+$login-bg-image: linear-gradient(248.66deg, $primary-color-login 0%, $secondary-color-login 100%);
+$login-bg-image-effect: hsla(0, 0%, 0%, 0.4);
+$login-bg-form: $app-white;
+
+// Sombras SCSS
+$card-shadow: 0px 10px 15px 0px #00000023;
+$box-shadow: 0px 0px 15px 0px #0000001a;
+
+$light-shadow: 0px 3px 10px 0px rgba(31, 41, 55, 0.08);
+$medium-shadow: 0px 4px 10px 0px rgba(31, 41, 55, 0.15);
+$strong-shadow: 0px 4px 20px 0px rgba(31, 41, 55, 0.2);
+
+$app-component-bg: #fff;
+
+$opacity-dark-30: rgba(31, 41, 55, 0.3);
+$opacity-primary-6: rgba(0, 113, 206, 0.06);
+$opacity-primary-10: rgba(0, 113, 206, 0.1);
+$opacity-dark-gray-30: rgba(75, 85, 99, 0.3);
+$opacity-dark-gray-50: rgba(75, 85, 99, 0.5);
+$opacity-gray-30: rgba(209, 213, 219, 0.3);
+$Opacity-overlay: rgba(75, 85, 99, 0.25);

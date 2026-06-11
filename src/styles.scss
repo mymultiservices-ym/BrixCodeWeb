@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+// Solo importar el main.scss que contiene todo
+@import '../src/app/styles/main.scss';
+
+
+// Estilos para el Bottom Sheet móvil
+.mobile-bottom-sheet {
+  min-width: 100% !important;
+  
+  .mat-bottom-sheet-container {
+    padding: 0 !important;
+    min-width: 100% !important;
+    border-radius: 20px 20px 0 0 !important;
+  }
+}
+
+// Ajustes responsive
+@media (max-width: 768px) {
+  .mat-bottom-sheet-container {
+    min-width: 100vw !important;
+    max-width: 100vw !important;
+  }
+}

@@ -1,0 +1,35 @@
+<div class="servicios-page">
+  <div class="hero-section">
+    <h1>Nuestros Servicios</h1>
+    <p>Soluciones tecnológicas que impulsan tu negocio</p>
+  </div>
+
+  <div class="servicios-grid">
+    <mat-card *ngFor="let servicio of servicios" class="servicio-card">
+      <mat-icon class="servicio-icon">{{servicio.icon}}</mat-icon>
+      <mat-card-title>{{servicio.title}}</mat-card-title>
+      <mat-card-content>
+        <p>{{servicio.description}}</p>
+        <ul>
+          <li *ngFor="let feature of servicio.features">
+            <mat-icon>check_circle</mat-icon>
+            <span>{{feature}}</span>
+          </li>
+        </ul>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" routerLink="/contacto">
+          Solicitar información
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <div class="cta-section">
+    <h2>¿Necesitas una solución personalizada?</h2>
+    <p>Cuéntanos tu proyecto y te asesoramos sin costo</p>
+    <button mat-raised-button color="accent" routerLink="/contacto">
+      Hablar con un experto
+    </button>
+  </div>
+</div>
