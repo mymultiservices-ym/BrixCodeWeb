@@ -1,0 +1,54 @@
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>
+        <mat-icon>rocket_launch</mat-icon>
+        BrixCode
+      </h3>
+      <p>Soluciones tecnológicas innovadoras que transforman ideas en software de calidad.</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Enlaces rápidos</h4>
+      <ul>
+        <li *ngFor="let link of quickLinks">
+          <a [routerLink]="link.path">{{link.label}}</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4>Contacto</h4>
+      <ul>
+        <li>
+          <mat-icon>email</mat-icon>
+          <span>contacto@brixcode.com</span>
+        </li>
+        <li>
+          <mat-icon>phone</mat-icon>
+          <span>+54 11 1234-5678</span>
+        </li>
+        <li>
+          <mat-icon>location_on</mat-icon>
+          <span>Buenos Aires, Argentina</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4>Síguenos</h4>
+      <div class="social-links">
+        <a *ngFor="let social of socialLinks" 
+           [href]="social.url" 
+           target="_blank"
+           [attr.aria-label]="social.label">
+          <mat-icon>{{social.icon}}</mat-icon>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; {{currentYear}} BrixCode. Todos los derechos reservados.</p>
+  </div>
+</footer>

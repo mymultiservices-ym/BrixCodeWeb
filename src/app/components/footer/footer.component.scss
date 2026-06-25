@@ -1,0 +1,125 @@
+@import '../../../styles.scss';
+
+.footer {
+  background: linear-gradient(135deg, #1e1e2f 0%, #2d2d44 100%);
+  color: $text-white;
+  margin-top: auto;
+  
+  .footer-content {
+    max-width: $bp-max-width;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    
+    @include sm() {
+      grid-template-columns: 1fr;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+  }
+  
+  .footer-section {
+    h3 {
+      @include companyNameHeaderText();
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      
+      @include sm() {
+        justify-content: center;
+      }
+      
+      mat-icon {
+        color: var(--secondary);
+      }
+    }
+    
+    h4 {
+      @include subTitleText();
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: var(--secondary);
+    }
+    
+    p {
+      @include generalText();
+      line-height: 1.6;
+    }
+    
+    ul {
+      list-style: none;
+      padding: 0;
+      
+      li {
+        @include generalText();
+        margin-bottom: 0.75rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        
+        @include sm() {
+          justify-content: center;
+        }
+        
+        a {
+          color: $text-white;
+          text-decoration: none;
+          transition: opacity 0.3s ease;
+          
+          &:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+          }
+        }
+        
+        mat-icon {
+          font-size: 18px;
+          width: 18px;
+          height: 18px;
+          color: var(--secondary);
+        }
+      }
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+      
+      @include sm() {
+        justify-content: center;
+      }
+      
+      a {
+        color: $text-white;
+        transition: transform 0.3s ease;
+        
+        mat-icon {
+          font-size: 24px;
+          width: 24px;
+          height: 24px;
+        }
+        
+        &:hover {
+          transform: translateY(-3px);
+          color: var(--secondary);
+        }
+      }
+    }
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    
+    p {
+      @include generalDescText();
+      margin: 0;
+      color: $text-white;
+    }
+  }
+}

@@ -1,0 +1,343 @@
+// ============================================
+// 1. IMPORTAR VARIABLES (primero, para que estén disponibles)
+// ============================================
+@import '../styles/mixins/variables/color.scss';
+@import '../styles/mixins/variables/sizes.scss';
+
+// ============================================
+// 2. IMPORTAR MIXINS (segundo, dependen de variables)
+// ============================================
+@import './mixins/generalText.scss';
+@import './mixins/sizes.scss';
+@import './mixins/utils.scss';
+
+// ============================================
+// 3. IMPORTAR FUENTES EXTERNAS
+// ============================================
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+// ============================================
+// 4. RESET GLOBAL Y ESTILOS BASE
+// ============================================
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  
+  @include lg() {
+    font-size: 15px;
+  }
+  
+  @include md() {
+    font-size: 14px;
+  }
+  
+  @include sm() {
+    font-size: 13px;
+  }
+}
+
+body {
+  font-family: $font-family-primary;
+  background-color: var(--bg);
+  color: var(--text-main);
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+// ============================================
+// 5. ESTILOS DE SCROLLBAR PERSONALIZADA
+// ============================================
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--border);
+  border-radius: var(--radius);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary);
+  border-radius: var(--radius);
+  
+  &:hover {
+    background: var(--primary);
+  }
+}
+
+// ============================================
+// 6. ESTILOS GLOBALES DE ANGULAR MATERIAL
+// ============================================
+
+// Ajustes para íconos de Material
+.mat-icon {
+  user-select: none;
+}
+
+// Estilos para snackbars personalizados
+.success-snackbar {
+  background: var(--success);
+  color: white;
+  
+  .mat-simple-snackbar-action {
+    color: white;
+  }
+}
+
+.error-snackbar {
+  background: var(--danger);
+  color: white;
+  
+  .mat-simple-snackbar-action {
+    color: white;
+  }
+}
+
+.warning-snackbar {
+  background: var(--warning);
+  color: white;
+  
+  .mat-simple-snackbar-action {
+    color: white;
+  }
+}
+
+// ============================================
+// 7. CLASES UTILITARIAS GLOBALES
+// ============================================
+
+// Contenedor principal responsivo
+.container {
+  max-width: $bp-max-width;
+  margin: 0 auto;
+  padding: 0 1rem;
+  
+  @include sm() {
+    padding: 0 0.75rem;
+  }
+}
+
+// Flex utilities
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Grid utilities
+.grid {
+  display: grid;
+}
+
+// Spacing utilities
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+// Colors
+.text-primary {
+  color: var(--primary);
+}
+
+.text-secondary {
+  color: var(--secondary);
+}
+
+.text-success {
+  color: var(--success);
+}
+
+.text-danger {
+  color: var(--danger);
+}
+
+.text-warning {
+  color: var(--warning);
+}
+
+// Backgrounds
+.bg-white {
+  background-color: var(--card-bg);
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.bg-secondary {
+  background-color: var(--secondary);
+}
+
+// ============================================
+// 8. ESTILOS PARA ANIMACIONES GLOBALES
+// ============================================
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// Clases de animación
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown 0.6s ease-out;
+}
+
+// ============================================
+// 9. ESTILOS PARA ACCESIBILIDAD
+// ============================================
+
+// Focus visible para navegación por teclado
+:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 2px;
+}
+
+// Skip to content link (accesibilidad)
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--secondary);
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 9999;
+  
+  &:focus {
+    top: 0;
+  }
+}
+
+// ============================================
+// 10. ESTILOS PARA LOADING Y ESTADOS
+// ============================================
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  
+  mat-spinner {
+    ::ng-deep circle {
+      stroke: var(--secondary);
+    }
+  }
+}
+
+// ============================================
+// 11. ESTILOS PARA IMPRESIÓN
+// ============================================
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    background: white;
+    color: black;
+  }
+  
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+}

@@ -1,0 +1,78 @@
+<div class="contact-page">
+  <div class="contact-card">
+    <div class="header">
+      <mat-icon class="header-icon">contact_mail</mat-icon>
+      <h2>Contacto</h2>
+      <p>Envíanos un mensaje y te responderemos a la brevedad</p>
+    </div>
+
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Nombre completo</mat-label>
+        <input matInput formControlName="name" placeholder="Ej: Juan Pérez">
+        <mat-icon matPrefix>person</mat-icon>
+        <mat-error *ngIf="contactForm.get('name')?.hasError('required')">
+          El nombre es obligatorio
+        </mat-error>
+        <mat-error *ngIf="contactForm.get('name')?.hasError('minlength')">
+          Mínimo 2 caracteres
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Correo electrónico</mat-label>
+        <input matInput formControlName="email" type="email" placeholder="ejemplo@correo.com">
+        <mat-icon matPrefix>email</mat-icon>
+        <mat-error *ngIf="contactForm.get('email')?.hasError('required')">
+          El email es obligatorio
+        </mat-error>
+        <mat-error *ngIf="contactForm.get('email')?.hasError('email')">
+          Ingresa un email válido
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Mensaje</mat-label>
+        <textarea matInput formControlName="message" rows="5" placeholder="¿En qué podemos ayudarte?"></textarea>
+        <mat-icon matPrefix>chat</mat-icon>
+        <mat-error *ngIf="contactForm.get('message')?.hasError('required')">
+          El mensaje es obligatorio
+        </mat-error>
+        <mat-error *ngIf="contactForm.get('message')?.hasError('minlength')">
+          Mínimo 10 caracteres
+        </mat-error>
+      </mat-form-field>
+
+      <div class="buttons">
+        <button mat-raised-button color="primary" type="submit" [disabled]="isSubmitting">
+          <mat-icon>send</mat-icon>
+          {{ isSubmitting ? 'Enviando...' : 'Enviar mensaje' }}
+        </button>
+        
+        <button mat-button color="accent" routerLink="/">
+          <mat-icon>home</mat-icon>
+          Volver al inicio
+        </button>
+      </div>
+    </form>
+
+    <div class="contact-info">
+      <h3>Otros medios de contacto</h3>
+      <div class="info-items">
+        <div class="info-item">
+          <mat-icon>email</mat-icon>
+          <span>contacto@brixcode.com</span>
+        </div>
+        <div class="info-item">
+          <mat-icon>phone</mat-icon>
+          <span>+54 11 1234-5678</span>
+        </div>
+        <div class="info-item">
+          <mat-icon>location_on</mat-icon>
+          <span>Buenos Aires, Argentina</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

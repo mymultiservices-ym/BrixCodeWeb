@@ -1,0 +1,114 @@
+.proyectos-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  
+  .hero-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: white;
+    
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
+    }
+    
+    p {
+      font-size: 1.2rem;
+      opacity: 0.95;
+    }
+  }
+  
+  .proyectos-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+  
+  .proyecto-card {
+    background: white;
+    border-radius: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    
+    .proyecto-placeholder {
+      height: 180px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 16px 16px 0 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: white;
+      
+      mat-icon {
+        font-size: 48px;
+        width: 48px;
+        height: 48px;
+      }
+      
+      span {
+        font-size: 0.9rem;
+        opacity: 0.9;
+      }
+    }
+    
+    mat-card-header {
+      padding: 1rem 1rem 0 1rem;
+      
+      mat-card-title {
+        font-size: 1.3rem;
+        color: #333;
+      }
+    }
+    
+    mat-card-content {
+      p {
+        color: #666;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+      }
+      
+      .technologies {
+        margin: 1rem 0;
+        
+        mat-chip-set {
+          gap: 0.5rem;
+        }
+        
+        mat-chip {
+          background: #f0f0f0;
+          color: #667eea;
+          font-size: 0.85rem;
+          padding: 0.25rem 0.75rem;
+        }
+      }
+    }
+    
+    mat-card-actions {
+      display: flex;
+      gap: 0.5rem;
+      padding: 0 1rem 1rem 1rem;
+      
+      button {
+        flex: 1;
+        
+        mat-icon {
+          margin-right: 4px;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
