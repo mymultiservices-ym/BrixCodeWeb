@@ -1,0 +1,51 @@
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  height: 100%;
+  
+  app-header {
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+  }
+  
+  .main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 0; // Importante para Firefox
+    
+    // 🔥 ESTO ES CLAVE - Hace que el router-outlet y su contenido funcionen
+    router-outlet {
+      display: none;
+    }
+    
+    // Selecciona el componente que viene después del router-outlet
+    router-outlet + * {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      min-height: 100%;
+    }
+    
+    // Alternativa: selecciona cualquier componente hijo directo
+    > *:not(router-outlet) {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      min-height: 100%;
+    }
+  }
+  
+  app-footer {
+    flex-shrink: 0;
+    margin-top: auto;
+    width: 100%;
+  }
+}
