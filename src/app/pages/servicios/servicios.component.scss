@@ -17,6 +17,7 @@
       @include mainTitleText();
       color: $text-white;
       margin-bottom: 1rem;
+      animation: fadeInDown 0.8s ease-out;
       
       @include sm() {
         font-size: 1.8rem;
@@ -27,6 +28,8 @@
       @include generalText();
       color: $text-white;
       font-size: 1.2rem;
+      animation: fadeInUp 0.8s ease-out;
+
       
       @include sm() {
         font-size: 1rem;
